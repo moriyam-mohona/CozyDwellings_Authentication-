@@ -1,0 +1,110 @@
+[
+  {
+    "image": "https://i.ibb.co/Fb1S9zD/Getty-Images-595504906.jpg",
+    "estate_title": "Luxury Family Home with Stunning Views",
+    "id": "001",
+    "segment_name": "Family Homes",
+    "description": "This spacious family home boasts 4 bedrooms, 3 bathrooms, a modern kitchen, and a large backyard.",
+    "price": "$600,000",
+    "status": "sale",
+    "area": "2500 sq ft",
+    "location": "Suburbia Estates, City Ville",
+    "facilities": ["living room", "backyard garden", "garage"]
+  },
+  {
+    "image": "https://i.ibb.co/tJB4cxm/2.webp",
+    "estate_title": "Cozy Townhouse in Quiet Neighborhood",
+    "id": "002",
+    "segment_name": "Townhouses",
+    "description": "This charming townhouse features 2 bedrooms, 1.5 bathrooms, and a quaint patio perfect for outdoor gatherings.",
+    "price": "$300,000",
+    "status": "sale",
+    "area": "1500 sq ft",
+    "location": "Maplewood Terrace, Townsville",
+    "facilities": ["living room", "patio", "parking space"]
+  },
+  {
+    "image": "https://i.ibb.co/LNK5nHG/3.webp",
+    "estate_title": "Modern Downtown Apartment with City Views",
+    "id": "003",
+    "segment_name": "Apartments",
+    "description": "This sleek apartment offers 1 bedroom, 1 bathroom, an open-concept kitchen, and stunning views of the city skyline.",
+    "price": "$1,500/month",
+    "status": "rent",
+    "area": "800 sq ft",
+    "location": "Metropolitan Towers, Downtown",
+    "facilities": ["living room", "gym", "rooftop terrace"]
+  },
+  {
+    "image": "https://i.ibb.co/pQJMptQ/images.jpg",
+    "estate_title": "Student Housing Near University Campus",
+    "id": "004",
+    "segment_name": "Student Housing",
+    "description": "This furnished student apartment offers shared living spaces, private bedrooms, and is conveniently located within walking distance to campus.",
+    "price": "$800/month (per room)",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "University Park, Collegeland",
+    "facilities": ["shared kitchen", "study area", "laundry room"]
+  },
+  {
+    "image": "https://i.ibb.co/dbwLhWk/Senior-Living-Communities.jpg",
+    "estate_title": "Retirement Community with Resort-style Amenities",
+    "id": "005",
+    "segment_name": "Senior Living Communities",
+    "description": "This senior living community offers independent living, assisted living, and memory care options, along with amenities such as a swimming pool, fitness center, and dining hall.",
+    "price": "$3,000/month",
+    "status": "rent",
+    "area": "Varies",
+    "location": "Tranquil Meadows, SeniorVille",
+    "facilities": ["swimming pool", "fitness center", "dining hall"]
+  },
+  {
+    "image": "https://i.ibb.co/WDKsG4C/Beachfront-Villa-with-Private-Pool.webp",
+    "estate_title": "Beachfront Villa with Private Pool",
+    "id": "006",
+    "segment_name": "Vacation Rentals",
+    "description": "Escape to paradise in this luxurious beachfront villa featuring 4 bedrooms, 3 bathrooms, a private pool, and panoramic ocean views.",
+    "price": "$500/night",
+    "status": "rent",
+    "area": "3000 sq ft",
+    "location": "Seaside Retreat, Oceanfront",
+    "facilities": ["private pool", "beach access", "outdoor lounge"]
+  },
+  {
+    "image": "https://i.ibb.co/t3rSFLC/Vacation-Rentals.jpg",
+    "estate_title": "Spacious Mountain Retreat",
+    "id": "007",
+    "segment_name": "Vacation Rentals",
+    "description": "Unwind in this spacious mountain retreat, featuring 3 bedrooms, 2 bathrooms, a cozy fireplace, and breathtaking views of the surrounding peaks.",
+    "price": "$400/night",
+    "status": "rent",
+    "area": "2000 sq ft",
+    "location": "Mountain Haven, Alpine Village",
+    "facilities": ["fireplace", "mountain views", "outdoor deck"]
+  },
+  {
+    "image": "https://i.ibb.co/GcQNQWv/Modern-Urban-Loft.jpg",
+    "estate_title": "Modern Urban Loft",
+    "id": "008",
+    "segment_name": "Apartments",
+    "description": "Live in style in this sleek urban loft, featuring exposed brick walls, high ceilings, and easy access to downtown amenities.",
+    "price": "$2,000/month",
+    "status": "rent",
+    "area": "1000 sq ft",
+    "location": "Cityscape Lofts, Downtown",
+    "facilities": ["open-concept layout", "industrial design", "fitness center"]
+  },
+  {
+    "image": "https://i.ibb.co/gjr4HGY/Quaint-Cottage-by-the-Lake.jpg",
+    "estate_title": "Quaint Cottage by the Lake",
+    "id": "009",
+    "segment_name": "Vacation Rentals",
+    "description": "Escape to this charming lakeside cottage, featuring 2 bedrooms, 1 bathroom, a private dock, and serene lake views.",
+    "price": "$300/night",
+    "status": "rent",
+    "area": "1200 sq ft",
+    "location": "Lakeside Retreat, Tranquil Cove",
+    "facilities": ["private dock", "lake access", "outdoor dining area"]
+  }
+]
