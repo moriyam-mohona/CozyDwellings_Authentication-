@@ -4,7 +4,6 @@ import { useLoaderData } from "react-router-dom"
 
 const Home = () => {
     const estates = useLoaderData();
-    console.log(estates)
     return (
         <div className="md:p-3 lg:px-14 mb-7">
             <Banner></Banner>

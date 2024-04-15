@@ -7,11 +7,13 @@ const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 const AuthProvider = ({ children }) => {
 
-    const [user, setUser] = useState([])
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+
     // console.log(user)
 
     useEffect(() => {
-        onAuthStateChanged(auth, (user) => {
+        onAuthStateChanged(auth, user => {
             if (user) {
                 setUser(user)
             }
@@ -19,24 +21,32 @@ const AuthProvider = ({ children }) => {
     }, [])
 
     const createUser = (email, password) => {
-        return createUserWithEmailAndPassword(auth, email, password)
+        // setLoading(true);
+        return createUserWithEmailAndPassword(auth, email, password);
+
     }
     const loginUser = (email, password) => {
-        return signInWithEmailAndPassword(auth, email, password)
+        // setLoading(true);
+        return signInWithEmailAndPassword(auth, email, password);
     }
     const googleLogin = () => {
-        return signInWithPopup(auth, googleProvider)
+        // setLoading(true);
+        return signInWithPopup(auth, googleProvider);
     }
     const githubLogin = () => {
-        return signInWithPopup(auth, githubProvider)
+        // setLoading(true);
+        return signInWithPopup(auth, githubProvider);
     }
     const logout = () => {
+        // setLoading(true);
         setUser(null)
-        signOut(auth)
+        // console.log("logout")
+        return signOut(auth)
+
     }
 
     const authInfo = {
-        user, createUser, loginUser, googleLogin, githubLogin, logout,
+        user, loading, createUser, loginUser, googleLogin, githubLogin, logout,
     }
 
     return (

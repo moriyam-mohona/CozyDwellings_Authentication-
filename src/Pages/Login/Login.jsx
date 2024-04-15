@@ -1,26 +1,39 @@
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form"
-import { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import SocialLogin from "./SocialLogin";
+import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Login = () => {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
+    const { register, handleSubmit, formState: { errors } } = useForm();
+    const [showPassword, setShowPassword] = useState(false);
 
-    const { loginUser } = useContext(AuthContext)
-    const { register, handleSubmit, formState: { errors } } = useForm()
-    const onSubmit = (data) => {
+    const onSubmit = async (data) => {
         const { email, password } = data;
 
-        loginUser(email, password)
-            .then(result => {
-                console.log(result);
-            })
-            .catch(error => {
-                console.error(error)
-            })
-    }
+        const user = await loginUser(email, password);
 
+        if (user) {
+            navigate(location?.state ? location.state : '/');
+            toast.success('Login Successful');
+        } else {
+            const error = await loginUser(email, "wrong_password");
+            if (error && error.code === "auth/wrong-password") {
+                toast.error('Password is incorrect');
+            } else {
+                toast.error('Email or password is incorrect');
+            }
+        }
+    };
+
+    const togglePassword = () => {
+        setShowPassword(!showPassword);
+    };
 
     return (
         <div className="hero min-h-screen">
@@ -36,15 +49,31 @@ const Login = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
-
-                            {errors.email && <span>This field is required</span>}</div>
+                            {errors.email && <span className="text-red-500 text-sm mt-2">This field is required</span>}
+                        </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name="password" placeholder="password" className="input input-bordered" {...register("password", { required: true })} />
-                            {errors.password && <span>This field is required</span>}
-                            <label className="label flex justify-end">
+
+                            <div className="relative w-full">
+                                <input
+                                    type={showPassword ? "text" : "password"}
+                                    name="password"
+                                    placeholder="Password"
+                                    className="input input-bordered pr-10 w-full"
+                                    {...register("password", { required: true })}
+                                />
+                                <span
+                                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                                    onClick={togglePassword}
+                                >
+                                    {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
+                                </span>
+                            </div>
+
+                            {errors.password && <span className="text-red-500 text-sm mt-2">This field is required</span>}
+                            <label className="label flex justify-start">
                                 <a href="#" className="label-text-alt link link-hover  text-base">Forgot password?</a>
                             </label>
                         </div>
@@ -52,9 +81,13 @@ const Login = () => {
                             <button className="btn bg-green-500 text-white text-lg">Login</button>
                         </div>
                         <p>Do not Have an Account? <a className="underline font-semibold text-green-500"><Link to="/register">Register Now</Link></a></p>
-                        <SocialLogin></SocialLogin>
+                        <div className="divider">continue with</div>
+                        <div className="flex gap-3 mx-auto">
+                            <button onClick={googleLogin} className="text-xl text-green-500"><FaGoogle /></button>
+                            <button onClick={githubLogin} className="text-xl text-green-500"><FaGithub /></button>
+                        </div>
                     </form>
-
+                    <ToastContainer />
                 </div>
             </div>
         </div>
