@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import EstateCard from "../EstateCard/EstateCard";
+import { Helmet } from "react-helmet-async";
 
 const Estates = () => {
     const estates = useLoaderData();

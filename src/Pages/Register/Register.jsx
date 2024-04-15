@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext);
@@ -41,6 +42,9 @@ const Register = () => {
 
     return (
         <div className="hero min-h-screen mb-7">
+            <Helmet>
+                <title>Cozy | Register</title>
+            </Helmet>
             <div className="hero-content flex-col lg:col">
                 <div className="text-center ">
                     <h1 className="text-5xl font-bold text-green-500 ">Register Now</h1>

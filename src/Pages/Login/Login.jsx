@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { FaGithub, FaGoogle, FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { ToastContainer, toast } from 'react-toastify';
+import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
@@ -37,6 +38,9 @@ const Login = () => {
 
     return (
         <div className="hero min-h-screen">
+            <Helmet>
+                <title>Cozy | Login</title>
+            </Helmet>
             <div className="hero-content flex-col lg:col">
                 <div className="text-center ">
                     <h1 className="text-5xl font-bold text-green-500 ">Login now!</h1>

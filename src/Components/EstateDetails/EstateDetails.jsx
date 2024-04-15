@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const EstateDetails = () => {
@@ -12,6 +13,9 @@ const EstateDetails = () => {
 
     return (
         <div className="lg:p-8">
+            <Helmet>
+                <title>Cozy | Estate</title>
+            </Helmet>
             {currentEstate && (
                 <div className=" flex flex-col lg:flex-row">
                     <img src={currentEstate.image} className="p-6 w-1/2 h-fit" />
