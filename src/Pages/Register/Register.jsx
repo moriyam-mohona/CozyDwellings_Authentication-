@@ -47,7 +47,7 @@ const Register = () => {
             </Helmet>
             <div className="hero-content flex-col lg:col">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold text-green-500 ">Register Now</h1>
+                    <h1 className="text-5xl font-bold text-green-700 ">Register Now</h1>
                     <p className="py-6">Please provide accurate information and create an account to access all the details</p>
                 </div>
                 <div className="card w-4/5 max-w-sm shadow-2xl bg-base-100">
@@ -57,7 +57,7 @@ const Register = () => {
                                 <span className="label-text">Name</span>
                             </label>
                             <input type="text" name="name" placeholder="Enter Your Name" className="input input-bordered" {...register("name", { required: true })} />
-                            {errors.name && <span className="text-red-500text-sm  mt-2">This field is required</span>}
+                            {errors.name && <span className="text-red-700text-sm  mt-2">This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -70,7 +70,7 @@ const Register = () => {
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="email" name="email" placeholder="Enter Your Email" className="input input-bordered" {...register("email", { required: true })} />
-                            {errors.email && <span className="text-red-500 text-sm mt-2">This field is required</span>}
+                            {errors.email && <span className="text-red-700 text-sm mt-2">This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -85,19 +85,19 @@ const Register = () => {
                                     {...register("password", { required: true })}
                                 />
                                 <span
-                                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-green-700  text-lg"
                                     onClick={togglePassword}
                                 >
                                     {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
                                 </span>
                             </div>
-                            {errors.password && <span className="text-red-500 text-sm mt-2">This field is required</span>}
+                            {errors.password && <span className="text-red-700 text-sm mt-2">This field is required</span>}
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-green-500 text-white text-lg">Register</button>
+                            <button className="btn bg-green-700 text-white text-lg">Register</button>
                         </div>
                         <ToastContainer />
-                        <p>Already Have an Account? <Link to="/login" className="underline font-semibold text-green-500">Login</Link></p>
+                        <p>Already Have an Account? <Link to="/login" className="underline font-semibold text-green-700">Login</Link></p>
                     </form>
                 </div>
             </div>

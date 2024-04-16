@@ -12,7 +12,7 @@ import s3 from '../../assets/Images/s3.avif';
 import s4 from '../../assets/Images/s4.avif';
 const Banner = () => {
     return (
-        <div className="mb-14">
+        <div className="mb-20">
             <Swiper
                 effect={'coverflow'}
                 grabCursor={true}
@@ -33,12 +33,12 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className="relative w-full h-96 rounded-2xl">
                         <img src={s1} alt="" className="w-full h-full object-cover rounded-2xl" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-90 rounded-2xl "></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100 rounded-2xl "></div>
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-                            <p className="text-white text-3xl mb-4">Welcome to Realstate</p>
-                            <p className="text-white text-6xl font-bold mb-4">Manage Your Property</p>
+                            <p className="text-white text-3xl mb-4">Welcome to <span className='font-semibold '>Cozy Dwellings</span></p>
+                            <p className="text-white text-6xl font-medium mb-4">Manage Your Property</p>
                             <p className="text-white text-sm mb-4">Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
-                            <button className="px-5 py-3 bg-green-500 text-white rounded-full flex items-center">
+                            <button className="btn glass px-5 py-3 text-xl font-medium bg-green-700 text-white rounded-full flex items-center">
                                 Discover a Home <RxArrowRight className="ml-2 text-xl font-semibold" />
                             </button>
                         </div>
@@ -47,12 +47,12 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className="relative w-full h-96 rounded-2xl">
                         <img src={s2} alt="" className="w-full h-full object-cover rounded-2xl" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-90 rounded-2xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100 rounded-2xl"></div>
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-                            <p className="text-white text-3xl mb-4">Welcome to Realstate</p>
-                            <p className="text-white text-6xl font-bold mb-4">Manage Your Property</p>
+                            <p className="text-white text-3xl mb-4">Welcome to <span className='font-semibold'>Cozy Dwellings</span></p>
+                            <p className="text-white text-6xl font-medium mb-4">Manage Your Property</p>
                             <p className="text-white text-sm mb-4">Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
-                            <button className="px-5 py-3 bg-green-500 text-white rounded-full flex items-center">
+                            <button className="btn glass px-5 py-3 text-xl font-medium bg-green-500 text-white rounded-full flex items-center">
                                 Discover a Home <RxArrowRight className="ml-2 text-xl font-semibold" />
                             </button>
                         </div>
@@ -61,12 +61,12 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className="relative w-full h-96 rounded-2xl">
                         <img src={s3} alt="" className="w-full h-full object-cover rounded-2xl" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-90 rounded-2xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100 rounded-2xl"></div>
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-                            <p className="text-white text-3xl mb-4">Welcome to Realstate</p>
-                            <p className="text-white text-6xl font-bold mb-4">Manage Your Property</p>
+                            <p className="text-white text-3xl mb-4">Welcome to <span className='font-semibold'>Cozy Dwellings</span></p>
+                            <p className="text-white text-6xl font-medium mb-4">Manage Your Property</p>
                             <p className="text-white text-sm mb-4">Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
-                            <button className="px-5 py-3 bg-green-500 text-white rounded-full flex items-center">
+                            <button className="btn glass px-5 py-3 text-xl font-medium bg-green-500 text-white rounded-full flex items-center">
                                 Discover a Home <RxArrowRight className="ml-2 text-xl font-semibold" />
                             </button>
                         </div>
@@ -75,12 +75,12 @@ const Banner = () => {
                 <SwiperSlide>
                     <div className="relative w-full h-96 rounded-2xl">
                         <img src={s4} alt="" className="w-full h-full object-cover rounded-2xl" />
-                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-90 rounded-2xl"></div>
+                        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-100 rounded-2xl"></div>
                         <div className="absolute inset-0 flex flex-col justify-center items-center text-center">
-                            <p className="text-white text-3xl mb-4">Welcome to Realstate</p>
-                            <p className="text-white text-6xl font-bold mb-4">Manage Your Property</p>
+                            <p className="text-white text-3xl mb-4">Welcome to <span className='font-semibold'>Cozy Dwellings</span></p>
+                            <p className="text-white text-6xl font-medium mb-4">Manage Your Property</p>
                             <p className="text-white text-sm mb-4">Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
-                            <button className="px-5 py-3 bg-green-500 text-white rounded-full flex items-center">
+                            <button className="btn glass px-5 py-3 text-xl font-medium bg-green-700 text-white rounded-full flex items-center">
                                 Discover a Home <RxArrowRight className="ml-2 text-xl font-semibold" />
                             </button>
                         </div>

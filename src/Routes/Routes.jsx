@@ -9,6 +9,10 @@ import Login from "../Pages/Login/Login";
 import Register from "../Pages/Register/Register";
 import EstateDetails from "../Components/EstateDetails/EstateDetails";
 import PrivateRoute from "./PrivateRoute";
+import OurWork from "../Pages/OurWork/OurWork";
+import UserProfile from "../Pages/UserProfile/UserProfile";
+
+
 const router = createBrowserRouter([
     {
         path: "/",
@@ -34,7 +38,19 @@ const router = createBrowserRouter([
             {
                 path: "/register",
                 element: <Register></Register>
-            }
+            },
+            {
+                path: "/ourWork",
+                element: <PrivateRoute><OurWork></OurWork></PrivateRoute>
+            },
+            {
+                path: "/userProfile",
+                element: <PrivateRoute>
+                    <UserProfile></UserProfile>
+                </PrivateRoute>
+            },
+
+
         ],
     },
 ]);

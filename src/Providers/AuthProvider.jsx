@@ -10,35 +10,36 @@ const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    // console.log(user)
 
     useEffect(() => {
-        onAuthStateChanged(auth, user => {
+        const unsubscribe = onAuthStateChanged(auth, user => {
             if (user) {
-                setUser(user)
+                setUser(user);
+                setLoading(false);
             }
         });
+        return () => unsubscribe();
     }, [])
 
     const createUser = (email, password) => {
-        // setLoading(true);
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
 
     }
     const loginUser = (email, password) => {
-        // setLoading(true);
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
     const googleLogin = () => {
-        // setLoading(true);
+        setLoading(true);
         return signInWithPopup(auth, googleProvider);
     }
     const githubLogin = () => {
-        // setLoading(true);
+        setLoading(true);
         return signInWithPopup(auth, githubProvider);
     }
     const logout = () => {
-        // setLoading(true);
+        // setLoading(false);
         setUser(null)
         // console.log("logout")
         return signOut(auth)

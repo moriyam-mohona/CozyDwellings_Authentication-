@@ -8,19 +8,28 @@ import { Helmet } from "react-helmet-async";
 
 
 const Login = () => {
-    const location = useLocation();
     const navigate = useNavigate();
+    const location = useLocation();
+
     const { loginUser, googleLogin, githubLogin } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
     const [showPassword, setShowPassword] = useState(false);
 
+    const handleSocialLogin = (socialProvider) => {
+        socialProvider()
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state || '/')
+                }
+            })
+    }
     const onSubmit = async (data) => {
         const { email, password } = data;
 
         const user = await loginUser(email, password);
 
         if (user) {
-            navigate(location?.state ? location.state : '/');
+            navigate(location?.state || '/');
             toast.success('Login Successful');
         } else {
             const error = await loginUser(email, "wrong_password");
@@ -43,7 +52,7 @@ const Login = () => {
             </Helmet>
             <div className="hero-content flex-col lg:col">
                 <div className="text-center ">
-                    <h1 className="text-5xl font-bold text-green-500 ">Login now!</h1>
+                    <h1 className="text-5xl font-bold text-green-700 ">Login now!</h1>
                     <p className="py-6">Login Now To See Details and Manage Your Profile...</p>
                 </div>
                 <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -52,8 +61,8 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
-                            {errors.email && <span className="text-red-500 text-sm mt-2">This field is required</span>}
+                            <input type="email" name="email" placeholder="Enter Your Email" className="input input-bordered" {...register("email", { required: true })} />
+                            {errors.email && <span className="text-red-700 text-sm mt-2">This field is required</span>}
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -64,31 +73,31 @@ const Login = () => {
                                 <input
                                     type={showPassword ? "text" : "password"}
                                     name="password"
-                                    placeholder="Password"
+                                    placeholder="Enter Your Password"
                                     className="input input-bordered pr-10 w-full"
                                     {...register("password", { required: true })}
                                 />
                                 <span
-                                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer"
+                                    className="absolute inset-y-0 right-0 flex items-center pr-3 cursor-pointer text-green-700  text-lg"
                                     onClick={togglePassword}
                                 >
                                     {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
                                 </span>
                             </div>
 
-                            {errors.password && <span className="text-red-500 text-sm mt-2">This field is required</span>}
+                            {errors.password && <span className="text-red-700 text-sm mt-2">This field is required</span>}
                             <label className="label flex justify-start">
                                 <a href="#" className="label-text-alt link link-hover  text-base">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <button className="btn bg-green-500 text-white text-lg">Login</button>
+                            <button className="btn bg-green-700 text-white text-lg">Login</button>
                         </div>
-                        <p>Do not Have an Account? <a className="underline font-semibold text-green-500"><Link to="/register">Register Now</Link></a></p>
+                        <p>Do not Have an Account? <a className="underline font-semibold text-green-700"><Link to="/register">Register Now</Link></a></p>
                         <div className="divider">continue with</div>
                         <div className="flex gap-3 mx-auto">
-                            <button onClick={googleLogin} className="text-xl text-green-500"><FaGoogle /></button>
-                            <button onClick={githubLogin} className="text-xl text-green-500"><FaGithub /></button>
+                            <button onClick={() => handleSocialLogin(googleLogin)} className="text-xl text-green-700"><FaGoogle /></button>
+                            <button onClick={() => handleSocialLogin(githubLogin)} className="text-xl text-green-700"><FaGithub /></button>
                         </div>
                     </form>
                     <ToastContainer />

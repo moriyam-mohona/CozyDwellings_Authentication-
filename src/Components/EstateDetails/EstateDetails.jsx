@@ -1,15 +1,11 @@
 import { Helmet } from "react-helmet-async";
+import { FaArrowAltCircleRight } from "react-icons/fa";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const EstateDetails = () => {
-
     const allEstates = useLoaderData();
-    console.log(allEstates)
     const { id } = useParams();
     const currentEstate = allEstates.find(e => e.id === id);
-
-    console.log("ID:", id);
-    console.log("Current Estate:", currentEstate);
 
     return (
         <div className="lg:p-8">
@@ -17,26 +13,31 @@ const EstateDetails = () => {
                 <title>Cozy | Estate</title>
             </Helmet>
             {currentEstate && (
-                <div className=" flex flex-col lg:flex-row">
-                    <img src={currentEstate.image} className="p-6 w-1/2 h-fit" />
-                    <div>
-                        <h1 className="text-3xl font-bold mb-4 font-play">{currentEstate.segment_name}</h1>
-                        <p className="text-lg font-medium mb-2"> {currentEstate.estate_title}</p>
-                        <hr className="my-4" />
-                        <div className="mb-4">
-                            <p><span className='font-bold'>Details: </span>{currentEstate.description}</p>
+                <div className="flex lg:flex-row rounded-xl px-8 mb-16 gap-8 ">
+                    <img src={currentEstate.image} className="rounded-xl h-96 w-svw" alt={currentEstate.segment_name} />
+                    <div className="flex flex-col justify-between">
+                        <div>
+                            {/* <p className="text-5xl text-green-700 mb-10 font-medium">Manage Your Property</p>
+                            <h4 className="text-xl mb-10 font-light max-w-screen-md text-center mx-auto">We offer a scalable, efficient, established model for empowering local leaders & construction teams to build homes for at risk members of their own communities.
+                            </h4> */}
+                            <h1 className="text-5xl text-green-700 mb-6 font-medium">{currentEstate.segment_name}</h1>
+                            <p className="text-xl mb-5 font-light max-w-screen-md ">{currentEstate.estate_title}</p>
+                            <hr className="my-7" />
+                            <div className="mb-4">
+                                <p className="text-2xl text-green-700 mb-3 font-semibold">Details:</p>
+                                <p className="text-md mb-5 font-light ">{currentEstate.description}</p>
+                            </div>
+                            <div className="flex flex-col mb-4 text-xl">
+                                {currentEstate.facilities.map((facility, index) => (
+                                    <span key={index} className="flex items-center gap-3 text-green-600 font-medium"><FaArrowAltCircleRight />{facility}</span>
+                                ))}
+                            </div>
+                            <hr className="my-4" />
                         </div>
-                        <div className="mb-4 flex flex-wrap">
-                            {currentEstate.facilities.map((facility, index) => (
-                                <span key={index} className="bg-gray-100 text-[#23BE0A] px-4 py-1 rounded-full mr-2 mb-2 font-semibold">{facility}</span>
-                            ))}
-                        </div>
-                        <hr className="my-4" />
-                        <div className="mb-4">
-                            <p className=""><span className="font-bold">Price: </span>  {currentEstate.price}</p>
-                            {/* <p className=""> <span className="font-bold">Publisher:</span> {currentEstate.status}</p> */}
-                            <p className=""> <span className="font-bold">Area:  </span>{currentEstate.area}</p>
-                            <p className=""><span className="font-bold">Location: </span> {currentEstate.location}</p>
+                        <div>
+                            <p className="mb-2 text-lg font-light"><span className="text-xl text-green-700 mb-3 font-semibold">Price:</span> {currentEstate.price}</p>
+                            <p className="mb-2 text-lg font-light"><span className="text-xl text-green-700 mb-3 font-semibold">Area:</span> {currentEstate.area}</p>
+                            <p className="mb-2 text-lg font-light"><span className="text-xl text-green-700 mb-3 font-semibold">Location:</span> {currentEstate.location}</p>
                         </div>
                     </div>
                 </div>
