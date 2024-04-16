@@ -7,8 +7,8 @@ const Navbar = () => {
     const { logout, user } = useContext(AuthContext);
     const handleLogout = () => {
         logout()
-            .then(result => {
-                if (result.user) {
+            .then(() => {
+                if (user) {
                     navigate(location?.state || '/login')
                 }
             })
@@ -23,7 +23,7 @@ const Navbar = () => {
                         <div tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                         </div>
-                        <ul tabIndex={0} className="menu menu-sm dropdown-content bg-green-200 mt-3 z-50 p-2 shadow rounded-box w-36">
+                        <ul tabIndex={0} className="menu menu-sm dropdown-content bg-green-100 mt-3 z-50 p-2 shadow rounded-box w-36">
                             <li><NavLink to='/' style={({ isActive }) => ({
                                 backgroundColor: isActive ? "#22c55e " : "", color: isActive ? "white" : "black", borderRadius: "9999px"
                             })}>Home</NavLink></li>
@@ -77,10 +77,15 @@ const Navbar = () => {
                                     <div className="w-10 rounded-full " >
                                         <img alt="" src={user.photoURL} />
                                     </div>
-                                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-green-200 mt-3 z-50 p-2 shadow rounded-box w-36">
+                                    <ul tabIndex={0} className="menu menu-sm dropdown-content bg-green-100 mt-3 z-50 p-2 shadow rounded-box w-36">
                                         <li><NavLink to='/userProfile' style={({ isActive }) => ({
                                             backgroundColor: isActive ? "#22c55e " : "", color: isActive ? "white" : "black", borderRadius: "9999px"
                                         })}>User Profile</NavLink></li>
+
+                                        <li><NavLink to='/updateProfile' style={({ isActive }) => ({
+                                            backgroundColor: isActive ? "#22c55e " : "", color: isActive ? "white" : "black", borderRadius: "9999px"
+                                        })}>Update Profile</NavLink></li>
+
                                         <li><button onClick={handleLogout}>Log Out</button></li>
                                     </ul>
                                 </div>

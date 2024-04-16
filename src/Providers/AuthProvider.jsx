@@ -26,6 +26,16 @@ const AuthProvider = ({ children }) => {
     const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
+    }
+    const updateProfile = (name, image) => {
+        updateProfile(auth.currentUser, {
+            displayName: name,
+            photoURL: image
+        }).then(() => {
+
+        }).catch((error) => {
+            console.error(error.message);
+        });
 
     }
     const loginUser = (email, password) => {
@@ -49,7 +59,7 @@ const AuthProvider = ({ children }) => {
     }
 
     const authInfo = {
-        user, loading, createUser, loginUser, googleLogin, githubLogin, logout,
+        user, loading, createUser, loginUser, googleLogin, githubLogin, logout, updateProfile
     }
 
     return (

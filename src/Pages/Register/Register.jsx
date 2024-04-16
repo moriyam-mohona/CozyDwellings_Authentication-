@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
@@ -10,12 +10,13 @@ import { Helmet } from "react-helmet-async";
 const Register = () => {
     const { createUser } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors } } = useForm();
-
+    const location = useLocation();
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
 
     const onSubmit = (data) => {
         const { email, password } = data;
-
+        // from = location?.state || '/';
         // Password verification criteria
         const uppercaseRegex = /[A-Z]/;
         const lowercaseRegex = /[a-z]/;
@@ -28,11 +29,15 @@ const Register = () => {
 
         // Attempt to create user
         createUser(email, password)
-            .then(() => {
-                toast.success('User created successfully');
+            .then((result) => {
+                if (result.user) {
+                    navigate('/');
+                    toast.success('User created successfully');
+                }
             })
             .catch(error => {
                 toast.error(error.message);
+
             });
     };
 
