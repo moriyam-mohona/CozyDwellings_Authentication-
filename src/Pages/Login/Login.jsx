@@ -87,7 +87,7 @@ const Login = () => {
 
                             {errors.password && <span className="text-red-700 text-sm mt-2">This field is required</span>}
                             <label className="label flex justify-start">
-                                <a href="#" className="label-text-alt link link-hover  text-base">Forgot password?</a>
+                                <a href="#" className="label-text-alt link link-hover text-base">Forgot password?</a>
                             </label>
                         </div>
                         <div className="form-control mt-6">

@@ -1,12 +1,18 @@
 import { useContext } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProvider";
 
 const Navbar = () => {
-
+    const navigate = useNavigate();
     const { logout, user } = useContext(AuthContext);
     const handleLogout = () => {
-        logout().then().catch(error => console.error(error.message))
+        logout()
+            .then(result => {
+                if (result.user) {
+                    navigate(location?.state || '/login')
+                }
+            })
+            .catch(error => console.error(error.message))
     }
 
     return (
@@ -31,8 +37,8 @@ const Navbar = () => {
                     </div>
                     <a className="text-3xl font-medium text-white">Cozy Dwellings</a>
                 </div>
-                <div className="navbar-center hidden lg:flex ">
-                    <ul className="menu menu-horizontal bg-white px-7 rounded-full ">
+                <div className="navbar-center hidden lg:flex gap-5">
+                    <ul className="menu menu-horizontal bg-white px-5 py-2 rounded-full ">
                         <li>
                             <NavLink
                                 to="/"
@@ -40,7 +46,7 @@ const Navbar = () => {
                                     backgroundColor: isActive ? "#22c55e " : "",
                                     color: isActive ? "white" : "black",
                                     borderRadius: "9999px"
-                                })}
+                                })} className='text-lg mr-3'
                             >Home</NavLink></li>
                         <li>
                             <NavLink
@@ -49,7 +55,7 @@ const Navbar = () => {
                                     backgroundColor: isActive ? "#22c55e " : "",
                                     color: isActive ? "white" : "black",
                                     borderRadius: "9999px"
-                                })}
+                                })} className='text-lg mr-3'
                             >Our Work</NavLink></li>
                         <li>
                             <NavLink
@@ -58,7 +64,7 @@ const Navbar = () => {
                                     backgroundColor: isActive ? "#22c55e " : "",
                                     color: isActive ? "white" : "black",
                                     borderRadius: "9999px"
-                                })}
+                                })} className='text-lg'
                             >User Profile</NavLink></li>
 
                     </ul>

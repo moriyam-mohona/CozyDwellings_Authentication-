@@ -3,8 +3,17 @@ import { FaBuildingLock } from "react-icons/fa6";
 import { GiConcreteBag, GiStoneWall, GiWaterTower } from "react-icons/gi";
 import { MdOutlineBathroom, MdOutlineElderlyWoman, MdOutlineRoofing } from "react-icons/md";
 import { TiDocumentText } from "react-icons/ti";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 const OurWork = () => {
+
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
+
     return (
         <div className="md:p-3 lg:px-14 mb-8 flex flex-col items-center">
             <Helmet>
@@ -22,49 +31,59 @@ const OurWork = () => {
 
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10 ">
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <GiConcreteBag className="text-7xl text-green-700 " />
-                    <h3 className="text-3xl font-light mb-4">Concrete Floor</h3>
-                    <p className='text-base text-ce'>Every home starts with a concrete floor, laying the foundation for a healthy and clean environment.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Concrete Floor</h3>
+                    <p className='text-base text-center text-green-700'>Every home starts with a concrete floor, laying the foundation for a healthy and clean environment.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <MdOutlineRoofing className="text-7xl text-green-700 " />
-                    <h3 className="text-3xl font-light mb-4">Solid Roof Surface</h3>
-                    <p className='text-base text-ce'>A solid roof protects family members from weather elements and eliminates roof leaks.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Solid Roof Surface</h3>
+                    <p className='text-base text-center text-green-700'>A solid roof protects family members from weather elements and eliminates roof leaks.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <GiStoneWall className="text-7xl text-green-700 " />
-                    <h3 className="text-3xl font-light mb-4">Strong Walls</h3>
-                    <p className='text-base text-ce'>Brick, concrete, or stucco walls built to stand the test of time and provide a legacy of shelter.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Strong Walls</h3>
+                    <p className='text-base text-center text-green-700'>Brick, concrete, or stucco walls built to stand the test of time and provide a legacy of shelter.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <FaBuildingLock className="text-7xl text-green-700 " />
-
-                    <h3 className="text-3xl font-light mb-4">Door & Window Locks</h3>
-                    <p className='text-base text-ce'>Locking doors and windows allow families to sleep and work in peace without fear.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Door & Window Locks</h3>
+                    <p className='text-base text-center text-green-700'>Locking doors and windows allow families to sleep and work in peace without fear.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <MdOutlineBathroom className="text-7xl text-green-700 " />
-                    <h3 className="text-3xl font-light mb-4">Latrines & Bathing</h3>
-                    <p className='text-base text-ce'>Latrines and bathing stalls spearhead sanitation initiatives to improve community health.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Latrines & Bathing</h3>
+                    <p className='text-base text-center text-green-700'>Latrines and bathing stalls spearhead sanitation initiatives to improve community health.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
-                    <GiWaterTower className="text-7xl text-green-700 " />
 
-                    <h3 className="text-3xl font-light mb-4">Rain Water Systems</h3>
-                    <p className='text-base text-ce'>Rain-catch water systems are installed at the homesite if disability hinders travel to local well.</p>
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
+                    <GiWaterTower className="text-7xl text-green-700 " />
+                    <h3 className="text-2xl font-semibold text-green-800">Rain Water Systems</h3>
+                    <p className='text-base text-center text-green-700'>Rain-catch water systems are installed at the homesite if disability hinders travel to local well.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <MdOutlineElderlyWoman className="text-7xl text-green-700 " />
-                    <h3 className="text-3xl font-light mb-4">Entrance Ramps</h3>
-                    <p className='text-base text-ce'>Entrance ramps are installed for elderly and families with disabilities to provide accessibility.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Entrance Ramps</h3>
+                    <p className='text-base text-center text-green-700'>Entrance ramps are installed for elderly and families with disabilities to provide accessibility.</p>
                 </div>
-                <div className="bg-slate-50 border border-green-700 p-6 rounded-3xl shadow-md flex flex-col items-center gap-5">
+
+                <div data-aos="zoom-in" data-aos-delay="100" className="bg-slate-50 border border-green-700 px-6 py-16 rounded-3xl shadow-md flex flex-col items-center gap-5">
                     <TiDocumentText className="text-7xl text-green-700 " />
-                    <h3 className="text-3xl font-light mb-4">Land Ownership</h3>
-                    <p className='text-base text-ce'>Local leaders confirm that each family owns the land their home is built on for sustainability.</p>
+                    <h3 className="text-2xl font-semibold text-green-800">Land Ownership</h3>
+                    <p className='text-base text-center text-green-700'>Local leaders confirm that each family owns the land their home is built on for sustainability.</p>
                 </div>
             </div>
+
+
+
 
 
             <h2 className="text-5xl text-green-700 mb-10 font-medium ">Take The Next Step</h2>
@@ -76,20 +95,27 @@ const OurWork = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-16 ">
 
-                <div className="bg-green-400 text-white rounded-3xl shadow-xl p-20 flex flex-col items-center">
-                    <h3 className="text-5xl font-medium text-white mb-4 text-center">SPONSOR A HOME</h3>
-                    <p className="text-white font-normal text-lg text-center mb-6">Give an Entire Home(s) as an Individual, Family, Or Business</p>
-                    <button className="btn btn-wide glass text-xl text-white font-normal bg-green-600 rounded-full ">Learn More →</button>
+
+                <div data-aos="fade-right" data-aos-delay="100">
+                    <div className="bg-green-400 text-white rounded-3xl shadow-xl p-20 flex flex-col items-center">
+                        <h3 className="text-5xl font-medium text-white mb-4 text-center">SPONSOR A HOME</h3>
+                        <p className="text-white font-normal text-lg text-center mb-6">Give an Entire Home(s) as an Individual, Family, Or Business</p>
+                        <button className="btn btn-wide glass text-xl text-white font-normal bg-green-600 rounded-full ">Learn More →</button>
+                    </div>
                 </div>
-                <div className="bg-green-400 text-white rounded-3xl shadow-xl p-20 flex flex-col items-center">
-                    <h3 className="text-5xl font-medium text-white mb-4 text-center">GIVE MONTHLY</h3>
-                    <p className="text-white font-normal text-lg text-center mb-6">Give Monthly Toward Essential Components of Home Construction</p>
-                    <button className="btn btn-wide glass text-xl text-white font-normal bg-green-600 rounded-full ">Learn More →</button>
+                <div data-aos="fade-down" data-aos-delay="100">
+                    <div className="bg-green-400 text-white rounded-3xl shadow-xl p-20 flex flex-col items-center">
+                        <h3 className="text-5xl font-medium text-white mb-4 text-center">GIVE MONTHLY</h3>
+                        <p className="text-white font-normal text-lg text-center mb-6">Give Monthly Toward Essential Components of Home Construction</p>
+                        <button className="btn btn-wide glass text-xl text-white font-normal bg-green-600 rounded-full ">Learn More →</button>
+                    </div>
                 </div>
-                <div className="bg-green-400 text-white rounded-3xl shadow-xl p-20 flex flex-col items-center">
-                    <h3 className="text-5xl font-medium text-white mb-4 text-center">START A CAMPAIGN</h3>
-                    <p className="text-white font-normal text-lg text-center mb-6">Start a Campaign to Support Our Cause</p>
-                    <button className="btn btn-wide glass text-xl text-white font-normal bg-green-600 rounded-full ">Learn More →</button>
+                <div data-aos="fade-left" data-aos-delay="100">
+                    <div className="bg-green-400 text-white rounded-3xl shadow-xl p-20 flex flex-col flex-grow h-full  justify-between items-center">
+                        <h3 className="text-5xl font-medium text-white mb-4 text-center">START A CAMPAIGN</h3>
+                        <p className="text-white font-normal text-lg text-center mb-6">Start a Campaign to Support Our Cause</p>
+                        <button className="btn btn-wide glass text-xl text-white font-normal bg-green-600 rounded-full ">Learn More →</button>
+                    </div>
                 </div>
 
 
@@ -97,6 +123,7 @@ const OurWork = () => {
 
             </div>
         </div>
+
     );
 };
 
