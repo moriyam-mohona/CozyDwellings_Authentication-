@@ -42,7 +42,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "/ourWork",
-                element: <PrivateRoute><OurWork></OurWork></PrivateRoute>
+                element: <PrivateRoute>
+                    <OurWork></OurWork>
+                </PrivateRoute>
             },
             {
                 path: "/userProfile",

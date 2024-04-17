@@ -3,22 +3,24 @@ import { AuthContext } from "../Providers/AuthProvider";
 import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-    const { user, loading } = useContext(AuthContext);
-    const location = useLocation();
+  const { user, loading } = useContext(AuthContext);
+  const location = useLocation();
+  console.log(user);
 
-    if (loading) {
-        return (
-            <div className="flex justify-center items-center h-screen">
-                <span className="loading loading-ring loading-lg bg-green-700"></span>
-            </div>
-        );
-    }
+  if (loading) {
+    console.log("loading", user);
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <span className="loading loading-ring loading-lg bg-green-700"></span>
+      </div>
+    );
+  }
 
-    if (!user) {
-        return <Navigate to='/login' state={location?.pathname || '/'} />;
-    }
-
+  if (user) {
+    // console.log("Inside user");
     return <div>{children}</div>;
+  }
+  return <Navigate to="/login" state={location?.pathname || "/"} />;
 };
 
 export default PrivateRoute;
