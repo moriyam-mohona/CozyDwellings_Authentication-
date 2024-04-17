@@ -7,7 +7,6 @@ import toast from "react-hot-toast";
 const UpdateProfile = () => {
   const { user, updateUserProfile, setUser } = useContext(AuthContext);
   const { register, handleSubmit, setValue } = useForm();
-  // const {  setValue } = useForm();
 
   const onSubmit = (data) => {
     const { name, photo } = data;
@@ -17,30 +16,27 @@ const UpdateProfile = () => {
         return { ...prevUser, displayName: name, photoURL: photo };
       });
     });
-
-    // .then((result) => {
-    //     if (result.user) {
-
-    //         toast.success('Profile Updated successfully');
-    //     }
-    // })
-    // .catch(error => {
-    //     toast.error(error.message);
-
-    // });
   };
 
   setValue("name", user.displayName || "");
   setValue("photo", user.photoURL || "");
 
   return (
-    <div className="px-14">
-      <div className="w-1/2 mx-auto px-5 py-10 mb-16 flex justify-center rounded-3xl border-2 drop-shadow-xl border-green-700 bg-green-50">
+    <div className="flex justify-center ">
+      <div className=" sm:px-5 md:px-8 py-8 md:py-12 lg:py-16 mb-20 sm:mb-20 md:mb-20 flex flex-col items-center rounded-3xl border-2 border-green-700 bg-green-50">
         <Helmet>
           <title>Cozy | Update Profile</title>
         </Helmet>
+        <h1 className="btn glass px-6 py-2 rounded-full bg-green-700 font-semibold text-3xl mb-10 text-white">
+          Update Profile
+        </h1>
+        <img
+          src={user?.photoURL || "https://i.ibb.co/vZyksXK/8801434.png"}
+          alt="No Image provided"
+          className="h-32 sm:h-40 w-32 sm:w-40 rounded-full border-4 border-green-700"
+        />
         <form className="mt-6" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mb-6 flex gap-20 items-center">
+          <div className="mb-6 flex gap-10 items-center">
             <label
               className="block text-xl font-bold mb-2 text-green-800"
               htmlFor="name"
@@ -51,11 +47,11 @@ const UpdateProfile = () => {
               type="text"
               name="name"
               placeholder="Enter Your Name"
-              className="border rounded w-80 py-3 px-3 text-gray-700"
+              className="border rounded w-72 md:w-80 py-3 px-3 text-gray-700"
               {...register("name")}
             />
           </div>
-          <div className="mb-6 flex gap-20 items-center">
+          <div className="mb-6 flex gap-10 items-center">
             <label
               className="block text-xl font-bold mb-2 text-green-800"
               htmlFor="email"
@@ -63,13 +59,13 @@ const UpdateProfile = () => {
               Email:
             </label>
             <input
-              className="appearance-none border rounded w-80 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="appearance-none border rounded w-72 md:w-80 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="email"
               value={user.email}
               readOnly
             />
           </div>
-          <div className="mb-6 flex gap-10 items-center">
+          <div className="mb-6 flex gap-2 items-center">
             <label
               className="block text-xl font-bold mb-2 text-green-800"
               htmlFor="photo"
@@ -77,7 +73,7 @@ const UpdateProfile = () => {
               Photo URL:
             </label>
             <input
-              className="appearance-none border rounded w-80 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="appearance-none border rounded w-72 md:w-80 py-3 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               type="text"
               name="photo"
               placeholder="Enter Your Photo URL"

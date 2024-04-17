@@ -59,7 +59,7 @@ const Login = () => {
             Login Now To See Details and Manage Your Profile...
           </p>
         </div>
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div className="card w-full md:max-w-sm shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -120,9 +120,9 @@ const Login = () => {
             </div>
             <p>
               Do not Have an Account?{" "}
-              <a className="underline font-semibold text-green-700">
+              <span className="underline font-semibold text-green-700">
                 <Link to="/register">Register Now</Link>
-              </a>
+              </span>
             </p>
             <div className="divider">continue with</div>
             <div className="flex gap-3 mx-auto">

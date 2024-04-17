@@ -13,13 +13,11 @@ const Register = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  // const location = useLocation();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (data) => {
     const { email, password, name, photo } = data;
-    // from = location?.state || '/';
 
     const uppercaseRegex = /[A-Z]/;
     const lowercaseRegex = /[a-z]/;
@@ -70,7 +68,7 @@ const Register = () => {
             all the details
           </p>
         </div>
-        <div className="card w-4/5 max-w-sm shadow-2xl bg-base-100">
+        <div className="card w-full max-w-md mx-auto shadow-2xl bg-base-100">
           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -148,7 +146,7 @@ const Register = () => {
                 Register
               </button>
             </div>
-            <p>
+            <p className="text-center">
               Already Have an Account?{" "}
               <Link
                 to="/login"

@@ -14,13 +14,12 @@ const Navbar = () => {
       })
       .catch((error) => console.error(error.message));
   };
-  console.log(user);
   return (
-    <div className="p-8 md:px-12 my-7 mb-16 ">
-      <div className="navbar bg-green-700 rounded-xl px-7 py-5">
+    <div className="p-3 md:px-12 my-7 mb-14 ">
+      <div className="navbar bg-green-700 rounded-xl md:px-7 py-5">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} className="btn btn-ghost lg:hidden">
+            <div tabIndex={0} className="btn btn-ghost lg:hidden ">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 text-white "
@@ -38,7 +37,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content bg-green-100 mt-3 z-50 p-2 shadow rounded-box w-36"
+              className="menu menu-sm dropdown-content bg-green-100 mt-3 z-50  shadow rounded-box w-36"
             >
               <li>
                 <NavLink
@@ -78,7 +77,9 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-3xl font-medium text-white">Cozy Dwellings</a>
+          <a className="sm:text-2xl md:text-3xl font-medium text-white">
+            Cozy Dwellings
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex gap-5">
           <ul className="menu menu-horizontal bg-white px-5 py-2 rounded-full ">
@@ -179,7 +180,7 @@ const Navbar = () => {
             </div>
           ) : (
             <Link to="/login">
-              <button className=" btn glass bg-green-500 px-7 py-2 rounded-full text-lg font-medium text-white">
+              <button className=" btn glass bg-green-500 px-7 md:py-2 rounded-full text-lg font-medium text-white">
                 Log In
               </button>{" "}
             </Link>
