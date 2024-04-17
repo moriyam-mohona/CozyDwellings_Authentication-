@@ -2,15 +2,22 @@ import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 
 const UpdateProfile = () => {
-  const { user, updateUserProfile } = useContext(AuthContext);
+  const { user, updateUserProfile, setUser } = useContext(AuthContext);
   const { register, handleSubmit, setValue } = useForm();
   // const {  setValue } = useForm();
 
   const onSubmit = (data) => {
     const { name, photo } = data;
-    updateUserProfile(name, photo);
+    updateUserProfile(name, photo).then(() => {
+      setUser((prevUser) => {
+        toast.success("Profile Updated successfully");
+        return { ...prevUser, displayName: name, photoURL: photo };
+      });
+    });
+
     // .then((result) => {
     //     if (result.user) {
 

@@ -10,7 +10,7 @@ import {
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Layout/FireBase/FireBase.config";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export const AuthContext = createContext(null);
 const googleProvider = new GoogleAuthProvider();
@@ -44,14 +44,20 @@ const AuthProvider = ({ children }) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
       photoURL: photo,
-    })
-      .then(() => {
-        toast.success("Profile Updated successfully");
-      })
-      .catch((error) => {
-        toast.error(error.message);
-      });
+    });
   };
+
+  //   // {
+  //   //   displayName: name,
+  //   //   photoURL: photo,
+  //   // }
+  //     .then(() => {
+  //       toast.success("Profile Updated successfully");
+  //     })
+  //     .catch((error) => {
+  //       toast.error(error.message);
+  //     });
+  // };
 
   const loginUser = (email, password) => {
     setLoading(true);
@@ -74,6 +80,7 @@ const AuthProvider = ({ children }) => {
 
   const authInfo = {
     user,
+    setUser,
     loading,
     createUser,
     loginUser,

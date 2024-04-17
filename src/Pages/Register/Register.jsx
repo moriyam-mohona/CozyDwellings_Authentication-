@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, updateUserProfile, setUser } = useContext(AuthContext);
   const {
     register,
     handleSubmit,
@@ -18,7 +18,7 @@ const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const onSubmit = (data) => {
-    const { email, password } = data;
+    const { email, password, name, photo } = data;
     // from = location?.state || '/';
 
     const uppercaseRegex = /[A-Z]/;
@@ -41,6 +41,11 @@ const Register = () => {
         if (result.user) {
           navigate("/");
           toast.success("User created successfully");
+          updateUserProfile(name, photo).then(() => {
+            setUser((prevUser) => {
+              return { ...prevUser, displayName: name, photoURL: photo };
+            });
+          });
         }
       })
       .catch((error) => {
