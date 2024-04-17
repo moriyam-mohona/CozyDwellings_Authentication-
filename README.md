@@ -27,7 +27,7 @@ To get started with Cozy Dwellings locally, follow these steps:
 3. Run the development server with `npm start`.
 4. Open your browser and navigate to your local host to view the website locally.
 
-Feel free to explore and contribute to make Cozy Dwellings even better!
+Feel free to explore and contribute to making Cozy Dwellings even better!
 
 ## Support
 
