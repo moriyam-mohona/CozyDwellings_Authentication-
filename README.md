@@ -2,7 +2,7 @@
 
 Welcome to Cozy Dwellings, your ultimate destination for finding cozy residential properties for sale or rent. Experience comfort and warmth like never before!
 
-Live Site: [Cozy Dwellings](https://www.example.com)
+Live Site: [Cozy Dwellings](https://real-estate-ae83a.web.app)
 
 ## Features and Characteristics
 
